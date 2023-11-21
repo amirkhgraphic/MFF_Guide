@@ -1,0 +1,477 @@
+:root {
+    --gr1: linear-gradient(to right, #7186B0, #C26580);
+    --card-background: #36454f;
+    --card-text: #8195ba;
+    --background: #212b31;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: "PoetsenOne";
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+/* Start header */
+.parent-navbar {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: max-content;
+    background: var(--gr1);
+    padding: 0 1rem;
+}
+.sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 -10px 25px;
+}
+.fixed-mobile-menu {
+    position: fixed;
+    top: 63px;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    background: var(--gr1);
+}
+#mobile-content {
+    position: absolute;
+    top: -300px;
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    transition: all 0.25s ease-in-out;
+}
+#logo-wrapper {
+    padding: 1rem;
+    width: 6rem;
+    height: 6rem;
+}
+#logo-wrapper img {
+    width: 4rem;
+}
+#mobile-nav {
+    padding: 1rem;
+    cursor: pointer;
+}
+#mobile-content {
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    box-shadow: 0 -10px 50px;
+}
+#mobile-content a {
+    display: block;
+    padding: 0 1rem;
+    text-align: left;
+    width: inherit;
+    background-color: var(--card-background);
+}
+
+#mobile-content .a-container {
+    background-color: white;
+}
+
+#mobile-content a:hover {
+    border: unset;
+    background: white;
+    background-image: var(--gr1);
+    background-size: 35%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+#main-navbar {
+    display: none;
+    justify-content: space-between;
+}
+
+.nav-item {
+    color: white;
+    width: 14.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+    height: inherit;
+    line-height: 6rem;
+    align-items: center;
+}
+
+.nav-item:hover {
+    background-color: white;
+    color: var(--card-text);
+}
+
+.icon {
+    width: 4rem;
+    height: 4rem;
+}
+/* End header */
+
+
+/* Start Main */
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main {
+    margin-top: 6rem;
+}
+/*Start title */
+#title {
+    color: white;
+    font-size: 5rem;
+    max-width: 100%;
+    margin: 3rem;
+    text-align: center;
+}
+/* End title */
+
+/* Start search-bar */
+#search-bar {
+    text-align: center;
+    display: flex;
+    justify-items: start;
+    justify-content: space-between;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 3rem;
+    padding: 0.5rem;
+    width: 80%;
+    max-width: 75rem;
+    border-radius: 0.75rem;
+}
+
+#search-bar:focus-within {
+    box-shadow: 0 0 25px rgb(0, 0, 0, 0.25);
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+#search-input {
+    background-color: white;
+    border: unset;
+
+    font-family: "AnjomanItalic";
+    padding: 0.5rem;
+    min-width: 75%;
+    max-height: fit-content;
+    text-align: start;
+    border-radius: 0.75rem;
+}
+
+#search-input:focus {
+    outline: unset;
+
+    background-color: white;
+    padding: 0.5rem;
+    min-width: 75%;
+    max-height: fit-content;
+    text-align: start;
+    border-radius: 0.75rem;
+}
+
+#search-btn {
+    color: white;
+    background: var(--gr1);
+    border: unset;
+    padding: 0.5rem;
+    max-width: 12rem;
+    min-width: 6rem;
+    width: 25%;
+    min-height: 3.5rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+}
+/* End search-bar */
+
+/* Start pagination */
+#pagination {
+    min-width: 80%;
+    margin: 3rem;
+    text-align: center;
+}
+
+#pagination * {
+    background: unset;
+    border: unset;
+    color: white;
+    font-size: 2.5rem;
+    border-radius: 1rem;
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+#pagination .button-hover:hover {
+    background: #6079a8;
+    color: white;
+}
+
+#pagination .active {
+    background: var(--gr1);
+}
+/* End pagination */
+
+/* Start card */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background: var(--card-background);
+    border-radius: 2rem;
+    padding: 2rem;
+    margin: 2.5rem;
+    gap: 2rem;
+    color: var(--card-text);
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--background);
+}
+
+.card-img {
+    border: double 0.75rem transparent;
+    border-radius: 3rem;
+    background-image: linear-gradient(var(--card-background), var(--card-background)), var(--gr1);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-self: flex-start;
+}
+
+.card-titles {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.card-title {
+    font-size: 2.7rem;
+    margin: 0;
+}
+
+.card-subtitle {
+    color: var(--card-subtext);
+    font-size: 2rem;
+    margin: 0;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-text-title {
+    font-family: "AnjomanCondensedHeavyItalic";
+    font-size: 2rem;
+    margin: 0;
+}
+
+.card-text-text {
+    font-family: "AnjomanMediumItalic";
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+}
+
+.head-normal {
+    font-family: "AnjomanCondensedHeavy";
+}
+
+.text-normal {
+    font-family: "AnjomanMedium";
+}
+
+.tab {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab button {
+    border: none;
+    outline: none;
+    background-color: var(--background);
+    color: var(--card-text);
+    cursor: pointer;
+    padding: 2rem 0;
+    font-size: 2rem;
+    width: 100%;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+button.regular {
+    border-bottom: 2px solid var(--card-text);
+}
+
+.tab-content {
+    display: none;
+    padding: 1.5rem;
+    background-color: var(--background);
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.tab-text-title {
+    font-family: "AnjomanCondensedHeavyItalic";
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.tab-text-text {
+    font-family: "AnjomanMedium";
+    font-size: 1.2rem;
+    color: white;
+    margin: 0;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+}
+
+button.active {
+    border-bottom: 2px solid var(--card-text);
+}
+
+.show {
+    display: block;
+}
+
+.lines-list {
+    margin: 0;
+}
+
+/* End card */
+
+/* Scroll bar start */
+body::-webkit-scrollbar {
+    width: 12px;               
+}
+body::-webkit-scrollbar-track {
+    background: var(--card-background);
+}
+body::-webkit-scrollbar-thumb {
+    background: #C26580;
+    border-radius: 20px;
+}
+/* Scroll bar end */
+
+/* Start footer */
+footer {
+    background: var(--card-background);
+    padding: 5rem;
+    text-align: center;
+    color: white;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.footer-line {
+    background: var(--gr1);
+    height: 1rem;
+}
+
+.icon-set {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    gap: 4rem;
+}
+
+.footer-text {
+    font-family: "AnjomanItalic";
+    font-size: 1rem;
+    word-spacing: 1rem;
+    padding-top: 1rem;
+}
+
+.links {
+    width: fit-content;
+    display: flex;
+    gap: 3rem;
+}
+
+.links * {
+    font-family: "AnjomanMedium";
+    font-size: 1.5rem;
+    border-bottom: 2px solid transparent;
+    text-decoration: unset;
+    color: white;
+}
+
+.links a:hover {
+    border-bottom: 2px solid white;
+}
+
+.bottom-footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+/* End footer */
+
+@media only screen and (min-width: 680px) {
+    #mobile-nav {
+        display: none;
+    }
+    #main-navbar {
+        display: flex;
+    }
+    .row {
+        flex-direction: row;
+        width: 100%;
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+    .card-titles {
+        text-align: left;
+    }
+}

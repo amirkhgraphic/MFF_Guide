@@ -7,4 +7,5 @@ urlpatterns = [
     path('card/', include('card.urls')),
     path('character/', include('character.urls')),
     path('artifact/', include('artifact.urls')),
+    path('', include('home.urls')),
 ]

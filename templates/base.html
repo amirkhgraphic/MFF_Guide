@@ -1,0 +1,141 @@
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      {% block title %}<title>Thanosvibe</title>{% endblock %}
+      {% load static %}
+      <link rel="icon" href="{% static 'image/logo.png' %}" type="image/x-icon"/>
+      <link rel="stylesheet" href="{% static 'styles.css' %}">
+      <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+      {% block links %}{% endblock %}
+      <style>
+          :root {
+            --gr1: linear-gradient(to right, #7186B0, #C26580);
+            --card-background: #36454f;
+            --card-text: #8195ba;
+            --card-subtext: #a2b1cc;
+            --background: #212b31;
+            --shadow-gr: linear-gradient(0deg, #000000cc, transparent);
+          }
+
+          @font-face {
+              font-family: "PoetsenOne";
+              src: url("{% static 'font/PoetsenOne-Regular.ttf' %}");
+          }
+          
+          @font-face {
+              font-family: "AnjomanMedium";
+              src: url("{% static 'font/Anjoman-Medium.ttf' %}");
+          }
+
+          @font-face {
+              font-family: "AnjomanMediumItalic";
+              src: url("{% static 'font/Anjoman-MediumItalic.ttf' %}");
+          }
+          
+          @font-face {
+            font-family: "AnjomanCondensedHeavy";
+              src: url("{% static 'font/Anjoman-CondensedHeavy.ttf' %}");
+          }
+
+          @font-face {
+              font-family: "AnjomanCondensedHeavyItalic";
+              src: url("{% static 'font/Anjoman-CondensedHeavyItalic.ttf' %}");
+          }
+          
+          @font-face {
+              font-family: "AnjomanItalic";
+              src: url("{% static 'font/Anjoman-Italic.ttf' %}");
+          }
+
+          :root {
+            --gr1: linear-gradient(to right, #7186B0, #C26580);
+            --card-background: #36454f;
+            --card-text: #8195ba;
+          }
+      </style>
+
+  </head>
+  
+  <body>
+      <header class="sticky-header">
+          <nav class="parent-navbar">
+            <a href="/static" id="logo-wrapper">
+              <img id="logo" src="{% static 'image/logo.png' %}" alt="logo"/>
+            </a>
+            <nav id="main-navbar">
+              <a href="/character" class="nav-item">Characters</a>
+              <a href="/ctp" class="nav-item">C.T.P.s</a>
+              <a href="/artifact" class="nav-item">Artifacts</a>
+              <a href="/card" class="nav-item">Cards</a>
+            </nav>
+            <nav id="mobile-nav">
+              <div id="clicking">
+                <svg class="icon" fill="white" width="5rem" height="5rem" viewBox="0 0 512 512">
+                  <path d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"></path>
+                </svg>
+              </div>
+            </nav>
+          </nav>
+          <div id="mobile-content" class="fixed-mobile-menu">
+            <div class="a-container"><a href="/character" class="nav-item">Characters</a></div>
+            <div class="a-container"><a href="/ctp" class="nav-item">C.T.P.s</a></div>
+            <div class="a-container"><a href="/artifact" class="nav-item">Artifacts</a></div>
+            <div class="a-container"><a href="/card" class="nav-item">Cards</a></div>
+          </div>
+      </header>
+      
+
+      <main>
+          {% block content %}{% endblock %}
+      </main>
+      
+      <script>
+        let icon = document.getElementById("clicking");
+        icon.onclick = function (e) {
+          e.stopPropagation()
+          var x = document.getElementById("mobile-content");
+          x.classList.toggle("show");
+
+          if (x.classList.contains("show")) {
+              x.style.top = "60px"
+              x.style.zIndex = "-1"
+          } else {
+              x.style.top = "-300px"
+          }
+        }
+        document.onclick = function() {
+          var x = document.getElementById("mobile-content");
+          if (x.classList.contains("show")) {
+            x.classList.remove("show");
+            x.style.top = "-300px"
+          }
+        }
+      </script>
+
+      {% block script %}{% endblock %}
+      
+  </body>
+
+  <footer>
+    <div class="icon-set">
+      <a target="_blank" href="https://github.com/amirkhgraphic"><iconify-icon icon="mdi:github" style="color: white;" width="50px"></iconify-icon></a>
+      <a target="_blank" href="https://t.me/Amirkh_MoD"><iconify-icon icon="icon-park-outline:telegram" style="color: white;" width="50"></iconify-icon></a>
+      <a target="_blank" href="https://quera.org/profile/Amirkh1996"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="55px"><defs><style>.cls-3{fill:none;}.cls-4{fill:white;}</style></defs><path class="cls-3" d="M0,.2H150v150H0Z" transform="translate(0 -0.2)"/><path class="cls-4" d="M75.32,12.58A61.65,61.65,0,1,0,137,74.23,61.65,61.65,0,0,0,75.32,12.58Zm36.32,79a18.78,18.78,0,0,1-2.15,8.75L79.33,70.12l-8,8,37.16,37.15-4,4,0,0a30.26,30.26,0,0,0-21.4-8.86H57.92A18.91,18.91,0,0,1,39,91.54V56.73A18.91,18.91,0,0,1,57.92,37.81h34.8a18.92,18.92,0,0,1,18.92,18.92Z" transform="translate(0 -0.2)"/></svg></a>
+      <a target="_blank" href=""><iconify-icon icon="mdi:linkedin" style="color: white;" width="50"></iconify-icon></a>
+    </div>
+    <div class="bottom-footer">
+      <p class="footer-text">
+        &copy; Copyright 2023 - Amirhossein Khalili, All rights reserved.
+      </p>
+      <div class="links">
+        <a href="/static">Home</a>
+        <a href="https://amirkhgraphic.github.io/Portfolio-Website/" target="_blank">About</a>
+        <a href="https://amirkhgraphic.github.io/Portfolio-Website/" target="_blank">Contact</a>
+        <a href="">Privacy</a>
+      </div>
+    </div>
+  </footer>
+  <div class="footer-line"></div>
+</html>

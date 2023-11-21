@@ -1,0 +1,298 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  gap: 5rem;
+}
+
+#slideshow-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.slides-container {
+  border-radius: 2rem;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  min-width: 15rem;
+  transition: 0.5s;
+  position: relative;
+}
+
+.gr {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width:100%; 
+  height: -webkit-fill-available; 
+  background: var(--shadow-gr);
+}
+
+.slideimage {
+  width: 100%;
+}
+
+.text {
+  position: absolute;
+  bottom: 5rem;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  font-size: 7rem;
+  color: white;
+  text-shadow: 0 0 3rem black;
+}
+
+.prev, .next {
+  width: 5rem;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s ease;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 5rem;
+  background-color: rgba(255,255,255,0.75);
+  padding: 2rem;
+  border-radius: 5rem;
+  align-self: center;
+  margin: 2rem;
+}
+
+.prev:hover, .next:hover {
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0 0 1.5rem rgba(255,255,255,0.25);
+}
+
+#dots {
+  margin: 0 50%;
+  position: absolute;
+  bottom: 2.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #bbb;
+  border-radius: 50%;
+  transition: 0.6s ease-in-out;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/* End Slider */
+
+
+/* Start About */
+#about {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
+.upper-part {
+  height: 20rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -5rem;
+}
+
+.middle-part {
+  height: 0.5rem;
+  /* background: var(--gr1); */
+  background-color: white;
+}
+
+.lower-part {
+  height: fit-content;
+  min-height: 25rem;
+  background-color: var(--card-background);
+  padding: 10rem 5rem;
+}
+
+.lower-part * {
+  margin: 0;
+}
+
+.title {
+  text-align: left;
+  font-size: 5rem;
+  color: white;
+  padding-bottom: 2rem;
+}
+
+.description {
+  font-size: 1.6rem;
+  text-align: justify;
+  color: white;
+  line-height: 3rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 2rem;
+  color: white;
+}
+
+.read-more-btn {
+  outline: unset;
+  border: unset;
+  display: block;
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+  background: var(--gr1);
+  color: white;
+}
+
+.read-more-btn button {
+  all: unset;
+  font-size: 2rem;
+}
+
+.read-more-btn:hover {
+  background: white;
+  box-shadow: 0 0 1rem rgb(255 255 255);
+  transition: 0.5s ease-in-out; 
+}
+
+.read-more-btn:hover button {
+  background: var(--gr1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.3s ease-in-out;
+}
+
+.website-btn {
+  all: unset;
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+  text-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
+  font-size: 2rem;
+  color: white;
+}
+
+.website-btn a {
+  color: white;
+}
+
+.website-btn:hover a {
+  text-decoration: underline;
+}
+
+.about-netmarble {
+  display: none;
+}
+
+.about-game {
+  display: none;
+}
+
+.image {
+  position: absolute;
+  top: 12.5rem;
+  left: 5rem;
+  width: 15rem;
+  height: 15rem;
+  background: rgb(0, 0, 0);
+  border-radius: 15rem;
+  overflow: hidden;
+  border: solid 0.5rem rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+
+.image:hover .shadow {
+  display: none;
+}
+
+.image:has(img:hover) {
+  border: solid 0.5rem white;
+}
+
+.image img {
+  cursor: pointer;
+  width: 100%;
+}
+
+.active-image {
+  border: solid 0.5rem white;
+}
+
+.active-image .shadow{ 
+  display: none;
+}
+
+.second {
+  left: 10rem;
+}
+
+.third {
+  left: 15rem;
+}
+
+.shadow {
+  background: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+/* End About */
+
+/* Start goTop */
+#goTop {
+  rotate: 90deg;
+  border: unset;
+  outline: unset;
+  position: fixed;
+  display: block;
+  bottom: -7rem;
+  left: 3rem;
+  width: 5rem;
+  height: 5rem;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  cursor: pointer;
+  border-radius: 4rem;
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+  transition: 0.3s ease-in-out;
+}
+
+#goTop:hover {
+  background-color: black;
+}
+/* End goTop */
