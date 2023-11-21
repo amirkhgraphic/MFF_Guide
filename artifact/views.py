@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import HttpResponse
+from artifact.models import Artifact
 
-# Create your views here.
+
+def scrape_artifact(request):
+    Artifact.scrape()
+    return HttpResponse("DONE!")

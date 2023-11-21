@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import HttpResponse
+from character.models import Character
 
-# Create your views here.
+
+def scrape_character(request):
+    Character.scrape()
+    return HttpResponse("DONE!")

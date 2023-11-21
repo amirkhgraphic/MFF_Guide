@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import HttpResponse
+from .models import CTP
 
-# Create your views here.
+def scrape_ctp(request):
+    CTP.scrape()
+    return HttpResponse("done!!!!!!!!!!!!!!!!!!!!!!!")
