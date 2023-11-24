@@ -26,11 +26,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'artifact',
-    'card',
-    'ctp',
-    'character',
-    'home',
+    'rest_framework',
+    'apps.artifact',
+    'apps.card',
+    'apps.ctp',
+    'apps.character',
+    'apps.home',
+    'API',
+    'API.characterAPI',
 ]
 
 MIDDLEWARE = [
@@ -111,9 +114,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+
+"""
+ONLY FOR DEPLOYMENT !!!
+this is where files go when you run 'python manage.py collectstatic' !
+"""
+# STATIC_ROOT = BASE_DIR / 'static'
+
+"""
+these are directories where django search when you run 'python manage.py collectstatic' !
+"""
 STATICFILES_DIRS = [
-    BASE_DIR / 'mystaticfiles'
+    BASE_DIR / 'static'
 ]
 
 MEDIA_URL = '/media/'
@@ -123,3 +135,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 20
+}
