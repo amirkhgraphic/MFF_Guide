@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Characters</title>{% endblock %}
+
+{% block content %}
+<h1 id="title">Characters</h1>
+
+<form id="search-bar" autocomplete="off" method="POST" action="/character/search/">
+    {% csrf_token %}
+    <input id="search-input" type="text" name="search-input" aria-label="search-input" placeholder="Enter character's name/uniform here...">
+    <input id="search-btn" type="submit" value="Search"/>
+</form>
+
+<div id="pagination">
+
+</div>
+
+<article id="cards">
+
+</article>
+
+{% load static %}
+<script src="{% static 'character/startPaginateFill.js' %}"></script>
+{% endblock %}

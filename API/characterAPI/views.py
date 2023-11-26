@@ -4,7 +4,7 @@ from apps.character.models import Character
 
 
 class GetCharacterList(ListAPIView):
-    queryset = Character.objects.all()
+    queryset = Character.objects.all().order_by('name', 'id')
     serializer_class = CharacterListSerializer
 
 

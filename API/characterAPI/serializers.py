@@ -6,7 +6,7 @@ class CharacterListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Character
-        fields = ('id', 'name', 'uniform', 'type', 'rotation')
+        fields = ('id', 'name', 'uniform', 'type', 'rotation', 'image_url')
 
 
 class CharacterDetailSerializer(serializers.ModelSerializer):

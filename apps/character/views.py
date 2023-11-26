@@ -1,5 +1,14 @@
 from django.shortcuts import HttpResponse
-from apps.character.models import Character
+from django.template import loader
+from .models import Character
+
+CURRENTS = []
+
+
+def list_characters(request, page=1):
+    template = loader.get_template("character/characters.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
 
 
 def scrape_character(request):

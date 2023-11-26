@@ -241,6 +241,7 @@ main {
     margin: 2.5rem;
     gap: 2rem;
     color: var(--card-text);
+    animation: fadeEffect 2s;
 }
 
 .row {
@@ -275,18 +276,18 @@ main {
     align-self: flex-start;
 }
 
-.card-titles {
+.card-title {
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
-.card-title {
+.card-name {
     font-size: 2.7rem;
     margin: 0;
 }
 
-.card-subtitle {
+.card-uniform {
     color: var(--card-subtext);
     font-size: 2rem;
     margin: 0;
@@ -298,13 +299,13 @@ main {
     gap: 1rem;
 }
 
-.card-text-title {
+.rotation-name {
     font-family: "AnjomanCondensedHeavyItalic";
     font-size: 2rem;
     margin: 0;
 }
 
-.card-text-text {
+.rotation-text {
     font-family: "AnjomanMediumItalic";
     font-size: 1.5rem;
     color: white;
