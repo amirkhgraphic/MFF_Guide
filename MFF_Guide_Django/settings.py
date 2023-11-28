@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'apps.home',
     'API',
     'API.characterAPI',
+    'API.artifactAPI',
 ]
 
 MIDDLEWARE = [

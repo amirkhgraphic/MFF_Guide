@@ -2,17 +2,16 @@ from django.shortcuts import HttpResponse
 from django.template import loader
 from .models import Character
 
-CURRENTS = []
 
-
-def list_characters(request, page=1):
+def characters(request):
     template = loader.get_template("character/characters.html")
     context = {}
     return HttpResponse(template.render(context, request))
 
 
 def scrape_character(request):
-    Character.scrape()
+    if input('enter y to continue...') == 'y':
+        Character.scrape()
     return HttpResponse("DONE!")
 
 

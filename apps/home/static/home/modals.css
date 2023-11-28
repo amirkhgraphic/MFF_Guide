@@ -1,0 +1,68 @@
+.character-modal {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #212b31;
+    color: white;
+}
+
+div.row {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 2rem;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    margin: 0;
+}
+
+.uniform {
+    font-style: italic;
+    padding: 0 1rem;
+    padding-bottom: 0.75rem;
+    margin: 0;
+
+}
+
+button.close {
+    all: unset;
+    height: min-content;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+button.close:hover {
+    cursor: pointer;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background: #36454f;
+    padding: 1rem;
+    min-height: 12rem;
+}
+
+.modal-footer {
+    display: flex;
+    flex-direction: row-reverse;
+    background: #212b31;
+}
+
+.modal-footer button {
+    all: unset;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.modal-footer button:hover {
+    cursor: pointer;
+}

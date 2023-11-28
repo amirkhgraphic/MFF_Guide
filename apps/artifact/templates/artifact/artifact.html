@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Artifacts</title>{% endblock %}
+{% load static %}
+{% block links %}<link rel="stylesheet" href="{% static 'artifact/artifact_styles.css' %}">{% endblock %}
+
+{% block content %}
+<h1 id="title">Artifacts</h1>
+
+<form id="search-bar" autocomplete="off" method="POST" action="/artifact/search/">
+    {% csrf_token %}
+    <input id="search-input" type="text" name="search-input" aria-label="search-input" placeholder="Enter artifact's name/type here...">
+    <input id="search-btn" type="submit" value="Search"/>
+</form>
+
+<div id="pagination">
+
+</div>
+
+<article id="cards">
+
+</article>
+
+{% endblock %}
+
+
+{% block script %}
+
+{% load static %}
+<script src="{% static 'artifact/startPaginateFill.js' %}"></script>
+{% endblock %}

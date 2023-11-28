@@ -11,14 +11,13 @@
     <input id="search-btn" type="submit" value="Search"/>
 </form>
 
-<div id="pagination">
+<div id="pagination"></div>
 
-</div>
+<article id="cards"></article>
 
-<article id="cards">
+{% endblock %}
 
-</article>
-
+{% block script %}
 {% load static %}
 <script src="{% static 'character/startPaginateFill.js' %}"></script>
 {% endblock %}

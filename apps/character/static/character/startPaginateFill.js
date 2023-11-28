@@ -172,4 +172,4 @@ function run(currentPage) {
 
 const APILink = 'http://127.0.0.1:8000/api/character/list/?page=';
 const pagination = document.getElementById("pagination");
-run(1)
+run(1);
