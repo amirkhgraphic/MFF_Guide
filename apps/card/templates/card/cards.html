@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Cards Stats</title>{% endblock %}
+{% load static %}
+{% block links %}<link rel="stylesheet" href="{% static 'card/card_styles.css' %}">{% endblock %}
+
+{% block content %}
+<h1 id="title">Cards Stats</h1>
+
+<form id="search-bar" autocomplete="off" method="POST" action="/card/search/">
+    {% csrf_token %}
+    <input id="search-input" type="text" name="search-input" aria-label="search-input" placeholder="Enter card's name/type here...">
+    <input id="search-btn" type="submit" value="Search"/>
+</form>
+
+<div id="pagination">
+
+</div>
+
+<article id="cards">
+
+</article>
+
+{% endblock %}
+
+{% block script %}
+{% load static %}
+<script src="{% static 'card/startPaginateFill.js' %}"></script>
+{% endblock %}
