@@ -1,15 +1,3 @@
-function createElement(currentPage, href, innerText, disable = false, active = false) {
-    let btn = document.createElement('button');
-    btn.className = (innerText === '...') ? '' : (active) ? 'active' : 'button-hover';
-    btn.disabled = disable;
-    btn.innerText = innerText;
-    btn.onclick = (disable) ? null
-        : (innerText === "«") ? () => run(currentPage - 1)
-        : (innerText === "»") ? () => run(currentPage + 1)
-        : () => run(innerText);
-    return btn;
-}
-
 function changeTab (e, name, rank) {
     const tabContent = document.getElementsByClassName(`tab-content ${name}`);
     for (let i = 0; i < tabContent.length; i++) {
@@ -22,78 +10,6 @@ function changeTab (e, name, rank) {
       tabLinks[i].className = tabLinks[i].className.replace(" active", "");
     }
     e.currentTarget.className += " active";
-}
-
-function paginateFirst3 (pagesNumber, currentPage, previous, next) {
-    pagination.innerHTML = ''
-
-    if (currentPage === 1) pagination.append(createElement(currentPage, previous, '«', true));
-    else pagination.append(createElement(currentPage, previous, '«'));
-    for (let i of [1, 2, 3]) {
-        if (i === currentPage) pagination.append(createElement(currentPage, `${APILink}${i}`, i, true, true));
-        else pagination.append(createElement(currentPage, `${APILink}${i}`, i));
-    }
-    pagination.append(createElement(currentPage, '', `...`, true));
-    pagination.append(createElement(currentPage, `${APILink}${pagesNumber-2}`, pagesNumber-2));
-    pagination.append(createElement(currentPage, `${APILink}${pagesNumber-1}`, pagesNumber-1));
-    pagination.append(createElement(currentPage, `${APILink}${pagesNumber}`, pagesNumber));
-    pagination.append(createElement(currentPage, next, '»'));
-
-}
-
-function paginateLast3 (pagesNumber, currentPage, previous, next) {
-    pagination.innerHTML = ''
-
-    pagination.append(createElement(currentPage, previous, '«'));
-    pagination.append(createElement(currentPage, `${APILink}1`, 1));
-    pagination.append(createElement(currentPage, `${APILink}2`, 2));
-    pagination.append(createElement(currentPage, `${APILink}3`, 3));
-    pagination.append(createElement(currentPage, '', `...`, true));
-
-    for (let i= pagesNumber-2; i <= pagesNumber; i++) {
-        if (i === currentPage) pagination.append(createElement(currentPage, `${APILink}${i}`, i, true, true));
-        else pagination.append(createElement(currentPage, `${APILink}${i}`, i));
-    }
-    if (currentPage === pagesNumber) pagination.append(createElement(currentPage, next, '»', true));
-    else pagination.append(createElement(currentPage, next, '»'));
-}
-
-function paginateBetween (pagesNumber, currentPage, previous, next) {
-    pagination.innerHTML = ''
-    pagination.append(createElement(currentPage, previous, '«'));
-    pagination.append(createElement(currentPage, `${APILink}1`, 1));
-    pagination.append(createElement(currentPage, `${APILink}2`, 2));
-    pagination.append(createElement(currentPage, '', `...`, true));
-    pagination.append(createElement(currentPage, '', currentPage, true, true));
-    pagination.append(createElement(currentPage, '', `...`, true));
-    pagination.append(createElement(currentPage, `${APILink}${pagesNumber-1}`, pagesNumber-1));
-    pagination.append(createElement(currentPage, `${APILink}${pagesNumber}`, pagesNumber));
-    pagination.append(createElement(currentPage, next, '»'));
-
-}
-
-function paginate(currentPage, count, next, previous) {
-    const pagesNumber = Math.ceil(count / 60);
-
-    if (7 <= pagesNumber) {
-        if (currentPage <= 3) paginateFirst3(pagesNumber, currentPage, previous, next);
-        else if (pagesNumber-2 <= currentPage) paginateLast3(pagesNumber, currentPage, previous, next);
-        else paginateBetween(pagesNumber, currentPage, previous, next)
-    }
-    else {
-        pagination.innerHTML = '';
-
-        if (currentPage === 1) pagination.append(createElement(currentPage, previous, '«', true));
-        else pagination.append(createElement(currentPage, previous, '«'));
-
-        for (let i= 1; i <= pagesNumber; i++) {
-            if (i === currentPage) pagination.append(createElement(currentPage, `${APILink}${i}`, i, true, true));
-            else pagination.append(createElement(currentPage, `${APILink}${i}`, i));
-        }
-
-        if (currentPage === pagesNumber) pagination.append(createElement(currentPage, next, '»', true));
-        else pagination.append(createElement(currentPage, next, '»'));
-    }
 }
 
 function fill(data, count) {
@@ -260,15 +176,14 @@ function fill(data, count) {
     }
 }
 
-function run(currentPage) {
-    fetch(APILink+currentPage)
+function run(currentPage, arg = null) {
+    key = (arg) ? arg : '';
+
+    fetch(APILink+key+'&page='+currentPage)
         .then(response => response.json())
-        .then(data => {
-            paginate(currentPage, data['count'], data['next'], data['previous']);
-            fill(data['results'], data['count']);
-        });
+        .then(data => fill(data['results'], data['count']));
 }
 
-const APILink = 'http://127.0.0.1:8000/api/ctp/list/?page=';
-const pagination = document.getElementById("pagination");
+var key;
+const APILink = 'http://127.0.0.1:8000/api/ctp/search/?Key=';
 run(1);

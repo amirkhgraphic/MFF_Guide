@@ -204,6 +204,7 @@ main {
 /* Start pagination */
 #pagination {
     min-width: 80%;
+    height: 4rem;
     margin: 3rem;
     text-align: center;
 }
