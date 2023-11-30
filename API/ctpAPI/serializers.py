@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from apps.card.models import Card
+from apps.ctp.models import CTP
 
 
-class CardListSerializer(serializers.ModelSerializer):
+class CTPListSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Card
+        model = CTP
         exclude = ('id', 'image')

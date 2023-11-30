@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'API.characterAPI',
     'API.artifactAPI',
     'API.cardAPI',
+    'API.ctpAPI',
 ]
 
 MIDDLEWARE = [

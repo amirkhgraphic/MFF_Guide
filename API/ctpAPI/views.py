@@ -1,9 +1,14 @@
-from API.cardAPI.serializers import CardListSerializer
+from rest_framework.pagination import PageNumberPagination
+from API.ctpAPI.serializers import CTPListSerializer
 from rest_framework.generics import ListAPIView
-from apps.card.models import Card
+from apps.ctp.models import CTP
 
 
-class GetCardList(ListAPIView):
-    queryset = Card.objects.all()
-    serializer_class = CardListSerializer
+class CTPPagination(PageNumberPagination):
+    page_size = 60
 
+
+class GetCTPList(ListAPIView):
+    queryset = CTP.objects.all()
+    serializer_class = CTPListSerializer
+    pagination_class = CTPPagination

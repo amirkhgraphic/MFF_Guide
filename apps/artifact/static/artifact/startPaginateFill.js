@@ -94,6 +94,7 @@ function changeTab (e, name, rank) {
     }
     e.currentTarget.className += " active";
 }
+
 function fill(data) {
     const cards = document.getElementById('cards');
     cards.innerHTML = '';

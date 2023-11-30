@@ -1,6 +1,6 @@
 from django.urls import path
-from API.cardAPI.views import GetCardList
+from API.ctpAPI.views import GetCTPList
 
 urlpatterns = [
-    path('list/', GetCardList.as_view(), name='list-card'),
+    path('list/', GetCTPList.as_view(), name='list-ctp'),
 ]

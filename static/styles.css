@@ -456,6 +456,8 @@ footer {
 }
 /* End footer */
 
+
+
 @media only screen and (min-width: 680px) {
     #mobile-nav {
         display: none;

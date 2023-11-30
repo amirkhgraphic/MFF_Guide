@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}<title>C.T.P. Stats</title>{% endblock %}
+{% load static %}
+{% block links %}<link rel="stylesheet" href="{% static 'ctp/ctp_styles.css' %}">{% endblock %}
+
+{% block content %}
+<h1 id="title">C.T.P. Stats</h1>
+
+<form id="search-bar" autocomplete="off" method="POST" action="/ctp/search/">
+    {% csrf_token %}
+    <input id="search-input" type="text" name="search-input" aria-label="search-input" placeholder="Enter custom gear's name/status here...">
+    <input id="search-btn" type="submit" value="Search"/>
+</form>
+
+<div id="pagination">
+
+</div>
+
+<article id="cards">
+
+</article>
+
+{% endblock %}
+
+{% block script %}
+{% load static %}
+<script src="{% static 'ctp/startPaginateFill.js' %}"></script>
+{% endblock %}
