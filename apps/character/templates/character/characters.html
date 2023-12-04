@@ -1,24 +1,48 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}<title>Characters</title>{% endblock %}
+{% block links %}<link rel="stylesheet" href="{% static 'character/character_styles.css' %}">{% endblock %}
 
 {% block content %}
-<h1 id="title">Characters</h1>
+    <h1 id="title">Characters</h1>
 
-<form id="search-bar" autocomplete="off" method="POST" action="/character/search/">
-    {% csrf_token %}
-    <input id="search-input" type="text" name="search-input" aria-label="search-input" placeholder="Enter character's name/uniform here...">
-    <input id="search-btn" type="submit" value="Search"/>
-</form>
+    <input id="search-input" autocomplete="off" type="text" aria-label="search-input" placeholder="Enter character's name/uniform here...">
 
-<div id="pagination"></div>
+    <div id="pagination"></div>
 
-<article id="cards"></article>
+    <article id="cards"></article>
+
+    <div id="background-modal"></div>
+    <article id="modal">
+        <div class="modal-titles">
+            <div class="header">
+                <p id="header-text"></p>
+                <span class="close" id="modal-close">&times;</span>
+            </div>
+            <h1 id="modal-name"></h1>
+            <h2 id="modal-uniform"></h2>
+        </div>
+
+        <ul id="modal-tab-titles">
+            <li id="attributes" class="active-li">ATTRIBUTES</li>
+            <li id="tier-list">TIER-LIST</li>
+            <li id="rotation">ROTATION</li>
+        </ul>
+        <div id="modal-tab-content">
+            <article class="modal-tab-content attributes">
+                <section id="basics"></section>
+                <section id="ability"></section>
+                <section id="advancement"></section>
+                <section id="instinct"></section>
+            </article>
+        </div>
+    </article>
 
 {% endblock %}
 
 {% block script %}
-{% load static %}
-<script src="{% static 'character/startPaginateFill.js' %}"></script>
-<script src="{% static 'character/form.js' %}"></script>
+    <script src="{% static 'character/modal.js' %}"></script>
+    <script src="{% static 'character/startPaginateFill.js' %}"></script>
+    <script src="{% static 'character/form.js' %}"></script>
 {% endblock %}

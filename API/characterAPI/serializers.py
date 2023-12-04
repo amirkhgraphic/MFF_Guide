@@ -13,4 +13,4 @@ class CharacterDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Character
-        exclude = ('id', 'image_url')
+        exclude = ('id', 'image')

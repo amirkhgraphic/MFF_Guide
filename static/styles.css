@@ -5,13 +5,14 @@
     --background: #212b31;
 }
 
+
 html {
     font-size: 10px;
     scroll-behavior: smooth;
 }
 
 * {
-    font-family: "PoetsenOne";
+    font-family: "MFF_italics";
     box-sizing: border-box;
     text-decoration: none;
 }
@@ -26,7 +27,6 @@ html {
     width: 100%;
     height: max-content;
     background: var(--gr1);
-    padding: 0 1rem;
 }
 .sticky-header {
     position: fixed;
@@ -145,59 +145,29 @@ main {
 /* End title */
 
 /* Start search-bar */
-#search-bar {
-    text-align: center;
-    display: flex;
-    justify-items: start;
-    justify-content: space-between;
-    background-color: white;
-    margin: auto;
-    margin-bottom: 3rem;
-    padding: 0.5rem;
-    width: 80%;
-    max-width: 75rem;
-    border-radius: 0.75rem;
-}
-
-#search-bar:focus-within {
-    box-shadow: 0 0 25px rgb(0, 0, 0, 0.25);
-    transition: box-shadow 0.5s ease-in-out;
-}
-
 #search-input {
-    background-color: white;
     border: unset;
-
+    background-color: white;
     font-family: "AnjomanItalic";
     padding: 0.5rem;
     min-width: 75%;
-    max-height: fit-content;
+    max-width: 75rem;
+    height: 4rem;
+    display: flex;
     text-align: start;
     border-radius: 0.75rem;
+    margin: auto;
+    margin-bottom: 3rem;
 }
 
 #search-input:focus {
     outline: unset;
-
     background-color: white;
     padding: 0.5rem;
     min-width: 75%;
     max-height: fit-content;
     text-align: start;
     border-radius: 0.75rem;
-}
-
-#search-btn {
-    color: white;
-    background: var(--gr1);
-    border: unset;
-    padding: 0.5rem;
-    max-width: 12rem;
-    min-width: 6rem;
-    width: 25%;
-    min-height: 3.5rem;
-    border-radius: 0.75rem;
-    cursor: pointer;
 }
 /* End search-bar */
 
@@ -301,26 +271,17 @@ main {
 }
 
 .rotation-name {
-    font-family: "AnjomanCondensedHeavyItalic";
     font-size: 2rem;
     margin: 0;
 }
 
 .rotation-text {
-    font-family: "AnjomanMediumItalic";
+    font-family: "AnjomanLightItalic";
     font-size: 1.5rem;
     color: white;
     margin: 0;
     letter-spacing: 0.5px;
     word-spacing: 2px;
-}
-
-.head-normal {
-    font-family: "AnjomanCondensedHeavy";
-}
-
-.text-normal {
-    font-family: "AnjomanMedium";
 }
 
 .tab {
@@ -336,7 +297,7 @@ main {
     color: var(--card-text);
     cursor: pointer;
     padding: 2rem 0;
-    font-size: 1rem;
+    font-size: 1.5rem;
     width: 100%;
     border-bottom: 2px solid transparent;
     transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
@@ -371,6 +332,7 @@ button.regular {
     margin: 0;
     letter-spacing: 0.5px;
     word-spacing: 2px;
+    line-height: 2.5rem;
 }
 
 button.active {
@@ -481,9 +443,14 @@ footer {
 }
 
 @media only screen and (min-width: 440px) {
+
     #pagination * {
         font-size: 2.5rem;
         width: 4rem;
         height: 4rem;
+    }
+
+    .tab button {
+        font-size: 2rem;
     }
 }

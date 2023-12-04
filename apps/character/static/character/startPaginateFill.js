@@ -103,6 +103,7 @@ function fill(data) {
         cardImg.alt = `${name}-${uniform}`;
         cardImg.width = 150;
         cardImg.height = 150;
+        cardImg.onclick = () => modalPopUp(item['id'])
 
         const container = document.createElement('div');
         container.className = 'container';

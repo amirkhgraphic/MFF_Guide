@@ -56,11 +56,11 @@ function fill(data, count) {
         description1.className = 'description';
 
         const head1 = document.createElement('h4');
-        head1.className = 'card-text-title head-normal';
+        head1.className = 'card-text-title';
         head1.innerText = 'DESCRIPTION';
 
         const p1 = document.createElement('p');
-        p1.className = 'card-text-text text-normal';
+        p1.className = 'card-text-text';
         p1.innerText = data[i]['description'];
 
         description1.append(head1);
@@ -71,11 +71,11 @@ function fill(data, count) {
         description2.className = 'description';
 
         const head2 = document.createElement('h4');
-        head2.className = 'card-text-title head-normal';
+        head2.className = 'card-text-title';
         head2.innerText = 'REFORGED DESCRIPTION';
 
         const p2 = document.createElement('p');
-        p2.className = 'card-text-text text-normal';
+        p2.className = 'card-text-text';
         p2.innerText = data[i]['reforged_description'];
 
         description2.append(head2);

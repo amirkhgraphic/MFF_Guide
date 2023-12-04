@@ -1,0 +1,150 @@
+:root {
+    --modal-background: #2c3840;
+    --modal-section: #36454f;
+}
+
+#background-modal {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    opacity: 0;
+    display: none;
+}
+
+#modal {
+    width: 70%;
+    height: 70%;
+    padding: 2rem;
+    background-color: var(--modal-background);
+    border-radius: 1rem;
+    position: fixed;
+    top: 15%;
+    left: 15%;
+    z-index: 102;
+    opacity: 0;
+    display: none;
+    animation: fadeEffect 0.5s;
+    overflow: auto;
+}
+
+.modal-titles {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    margin: 0;
+}
+
+#header-text {
+    color: white;
+    font-size: 1rem;
+    margin: 0;
+    font-family: 'AnjomanLightItalic';
+}
+
+.close {
+    all: unset;
+    height: fit-content;
+    cursor: pointer;
+}
+
+#modal-name {
+    color: var(--card-text);
+    font-size: 5rem;
+    margin: 0;
+}
+
+#modal-uniform {
+    color: var(--card-subtext);
+    font-size: 3rem;
+    margin: 0;
+}
+
+#modal-tab-titles {
+    all: unset;
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#modal-tab-titles li {
+    list-style: none;
+    padding: 2rem 1rem;
+    cursor: pointer;
+}
+
+li.active-li {
+    border-bottom: white solid 0.2rem;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#modal-tab-content article {
+    display: grid;
+    grid-template-columns: 31rem 31rem;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.modal-tab-content section {
+    text-align: center;
+    padding: 3rem;
+    color: white;
+    height: 25rem;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: 10rem 10rem;
+    gap: 3rem;
+    background-color: var(--modal-section);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+
+.modal-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+img.modal-item-image {
+    width: 6rem;
+    align-self: center;
+}
+
+p.modal-item-text {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Scroll bar start */
+#modal::-webkit-scrollbar {
+    width: 12px;
+}
+#modal::-webkit-scrollbar-track {
+    background: var(--card-background);
+}
+#modal::-webkit-scrollbar-thumb {
+    background: #C26580;
+    border-radius: 20px;
+}
+/* Scroll bar end */

@@ -94,8 +94,8 @@ class Character(Model):
             gender = h6s[2].get_attribute("innerHTML")
             side = h6s[3].get_attribute("innerHTML")
 
-            abillities_h6s = uls[1].find_elements(By.TAG_NAME, "h6")
-            abillities = [h6.get_attribute("innerHTML") for h6 in abillities_h6s]
+            abillities_hs = uls[1].find_elements(By.TAG_NAME, "h6")
+            abillities = [h6.get_attribute("innerHTML") for h6 in abillities_hs]
 
             advancement_h6s = uls[2].find_elements(By.TAG_NAME, "h6")
             advancement = [h6.get_attribute("innerHTML") for h6 in advancement_h6s]

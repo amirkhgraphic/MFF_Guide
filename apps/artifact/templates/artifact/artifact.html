@@ -5,28 +5,17 @@
 {% block links %}<link rel="stylesheet" href="{% static 'artifact/artifact_styles.css' %}">{% endblock %}
 
 {% block content %}
-<h1 id="title">Artifacts</h1>
+    <h1 id="title">Artifacts</h1>
 
-<form id="search-bar" autocomplete="off" method="POST" action="/artifact/search/">
-    {% csrf_token %}
-    <input id="search-input" type="text" name="search-input" aria-label="search-input" placeholder="Enter artifact's name/type here...">
-    <input id="search-btn" type="submit" value="Search"/>
-</form>
+    <input id="search-input" autocomplete="off" type="text" aria-label="search-input" placeholder="Enter character's name/uniform here...">
 
-<div id="pagination">
+    <div id="pagination"></div>
 
-</div>
-
-<article id="cards">
-
-</article>
-
+    <article id="cards"></article>
 {% endblock %}
 
-
 {% block script %}
-
-{% load static %}
-<script src="{% static 'artifact/startPaginateFill.js' %}"></script>
-<script src="{% static 'artifact/form.js' %}"></script>
+    {% load static %}
+    <script src="{% static 'artifact/startPaginateFill.js' %}"></script>
+    <script src="{% static 'artifact/form.js' %}"></script>
 {% endblock %}
