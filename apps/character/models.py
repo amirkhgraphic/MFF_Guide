@@ -35,6 +35,11 @@ class Character(Model):
     image = ImageField(null=True, blank=True, upload_to='character')
     image_url = URLField(null=True, blank=True)
 
+
+    def __str__(self):
+        return f'{self.name} - {self.uniform}'
+
+
     @classmethod
     def scrape(cls):
         service = webdriver.ChromeService(executable_path=DRIVER_PATH)

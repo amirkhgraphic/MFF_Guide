@@ -168,7 +168,7 @@ function exec() {
                     content.style.padding = "0px 2rem";
                 }
                 else {
-                    content.style.maxHeight = "60rem";
+                    content.style.maxHeight = "70rem";
                     content.style.padding = "2rem";
                 }
             });
