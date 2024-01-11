@@ -80,7 +80,7 @@ You can click on this [Link](http://127.0.0.1:8000/) or clone this project on yo
 > **you can specify a port to run the server on if you want; otherwise it will run on the default*
 
 ## Contribute! 🤝🏻
-I'm more than happy to hear your feedbacks and have some helps from you guys!
+I'm more than happy to hear your feedbacks and collaborate with you guys!
 
 if you had any problem contributing on the project, feel free to contact me:
 
